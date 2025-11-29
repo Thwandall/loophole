@@ -1,0 +1,130 @@
+.contact-content {
+  width: 100%;
+  max-width: 580px;
+  transform: rotate(-0.5deg);
+}
+
+.contact-header {
+  font-size: 2.8rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  font-family: 'Sedgwick Ave', cursive;
+  transform: rotate(1.2deg) translateX(-15px);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transform-origin: left center;
+}
+
+.form-group:nth-child(1) { transform: rotate(-0.5deg) translateX(3px); }
+.form-group:nth-child(2) { transform: rotate(0.4deg) translateX(-5px); }
+.form-group:nth-child(3) { transform: rotate(-0.3deg) translateX(8px); }
+.form-group:nth-child(4) { transform: rotate(0.5deg) translateX(-3px); }
+
+.form-label {
+  font-size: 1.3rem;
+  font-family: 'Sedgwick Ave', cursive;
+  color: var(--text);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.3rem;
+}
+
+.optional-text {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  font-family: 'Rock Salt', cursive;
+}
+
+.form-input {
+  font-size: 1.2rem;
+  font-family: 'Sedgwick Ave', cursive;
+  padding: 0.9rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(245, 245, 240, 0.3);
+  border-radius: 4px;
+  color: var(--text);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.form-input::placeholder {
+  color: var(--text-dim);
+  opacity: 0.6;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.form-input--error {
+  border-color: #e57373;
+  background: rgba(229, 115, 115, 0.05);
+}
+
+.field-error {
+  color: #e57373;
+  font-size: 0.95rem;
+  font-family: 'Rock Salt', cursive;
+  margin-top: 0.3rem;
+  transform: rotate(-0.5deg);
+}
+
+.nav-arrows {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s ease;
+  opacity: 0.8;
+}
+
+.nav-btn:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.nav-btn svg {
+  width: 55px;
+  height: 55px;
+  stroke: var(--text);
+  stroke-width: 2.5;
+  fill: none;
+  filter: url(#rough);
+}
+
+@media (max-width: 600px) {
+  .contact-header {
+    font-size: 2.2rem;
+  }
+
+  .form-label {
+    font-size: 1.1rem;
+  }
+
+  .form-input {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+}

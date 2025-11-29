@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import LandingPage from './components/LandingPage'
+import ContactPage from './components/ContactPage'
 import SurveyPage from './components/SurveyPage'
 import ThankYouPage from './components/ThankYouPage'
 import RoughFilters from './components/RoughFilters'
@@ -10,11 +11,25 @@ function App() {
   const [currentPage, setCurrentPage] = useState('landing')
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answers, setAnswers] = useState({})
+  const [contactInfo, setContactInfo] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: ''
+  })
   const [error, setError] = useState(null)
 
   const startSurvey = () => {
+    setCurrentPage('contact')
+  }
+
+  const startQuestions = () => {
     setCurrentPage('survey')
     setCurrentQuestion(0)
+  }
+
+  const backToLanding = () => {
+    setCurrentPage('landing')
   }
 
   const selectOption = (questionId, type, value) => {
@@ -57,16 +72,17 @@ function App() {
       setCurrentQuestion(prev => prev - 1)
       setError(null)
     } else {
-      // If on first question, go back to landing page
-      setCurrentPage('landing')
+      // If on first question, go back to contact page
+      setCurrentPage('contact')
       setError(null)
     }
   }
 
   const submitSurvey = () => {
     if (!validateCurrentQuestion()) return
-    
-    // Here you would typically send answers to a backend
+
+    // Here you would typically send answers and contact info to a backend
+    console.log('Contact Info:', contactInfo)
     console.log('Survey answers:', answers)
     setCurrentPage('thankyou')
   }
@@ -75,8 +91,8 @@ function App() {
     <div className="app">
       <RoughFilters />
       <Doodles />
-      
-      {currentPage !== 'landing' && currentPage !== 'thankyou' && (
+
+      {currentPage === 'survey' && (
         <div className="progress">
           {currentQuestion + 1} / {questions.length}
         </div>
@@ -84,6 +100,15 @@ function App() {
 
       {currentPage === 'landing' && (
         <LandingPage onStart={startSurvey} />
+      )}
+
+      {currentPage === 'contact' && (
+        <ContactPage
+          contactInfo={contactInfo}
+          onUpdate={setContactInfo}
+          onNext={startQuestions}
+          onBack={backToLanding}
+        />
       )}
 
       {currentPage === 'survey' && (
