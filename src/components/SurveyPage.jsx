@@ -4,13 +4,13 @@ import NavArrow from './NavArrow'
 import SubmitButton from './SubmitButton'
 import './SurveyPage.css'
 
-const rotations = [-0.8, 0.5, -1, 0.7, -0.4, 0.9, -0.6, 0.4, -0.7, 0.6]
-
 function SurveyPage({
   question,
   questionIndex,
   answers,
   error,
+  submitError,
+  isSubmitting,
   onSelect,
   onNext,
   onPrev,
@@ -18,7 +18,6 @@ function SurveyPage({
   isFirst,
   isLast
 }) {
-  const rotation = rotations[questionIndex % rotations.length]
   const currentAnswer = answers[question.id]
 
   const isSelected = (index) => {
@@ -49,7 +48,7 @@ function SurveyPage({
 
   return (
     <div className="page page--active">
-      <div className="survey-content" style={{ transform: `rotate(${rotation}deg)` }}>
+      <div className="survey-content">
         <div className="question-number scribble-text">
           Question {question.id}
         </div>
@@ -108,12 +107,28 @@ function SurveyPage({
           <button
             className="nav-btn"
             onClick={onPrev}
+            disabled={isSubmitting}
           >
             <NavArrow direction="left" />
           </button>
 
           {isLast ? (
-            <SubmitButton onClick={onSubmit} />
+            <div className="submit-area">
+              <SubmitButton
+                onClick={onSubmit}
+                disabled={isSubmitting}
+              />
+              {isSubmitting && (
+                <div className="submitting-message">
+                  Submitting your survey...
+                </div>
+              )}
+              {submitError && !isSubmitting && (
+                <div className="submit-error-message">
+                  {submitError}
+                </div>
+              )}
+            </div>
           ) : (
             <button className="nav-btn" onClick={onNext}>
               <NavArrow direction="right" />

@@ -24,11 +24,16 @@
   filter: url(#rough);
 }
 
-.submit-btn:hover {
+.submit-btn:hover:not(:disabled) {
   transform: rotate(0deg) scale(1.05);
 }
 
 .submit-btn:disabled {
-  opacity: 0.4;
+  opacity: 0.5;
   cursor: not-allowed;
+  transform: rotate(-1.5deg);
+}
+
+.submit-btn--disabled svg {
+  opacity: 0.6;
 }

@@ -123,5 +123,16 @@ export const questions = [
       "Unlikely",
       "Very unlikely"
     ]
+  },
+  {
+    id: 11,
+    text: "Would you be open to a short 10–15 minute interview to help us build a platform that truly supports creatives like you? Your insight would directly shape the features we build.",
+    type: "single",
+    options: [
+      "Yes, definitely",
+      "Yes, but I'd need to schedule",
+      "Maybe — send details",
+      "No, not right now"
+    ]
   }
 ]

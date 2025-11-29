@@ -9,7 +9,6 @@
   font-weight: 400;
   margin-bottom: 1.5rem;
   font-family: 'Permanent Marker', cursive;
-  transform: rotate(1.5deg) translateX(-15px);
   letter-spacing: 2px;
 }
 
@@ -17,7 +16,6 @@
   font-size: 1.6rem;
   margin-bottom: 2.5rem;
   line-height: 1.5;
-  transform: rotate(-0.4deg);
   font-family: 'Sedgwick Ave', cursive;
 }
 
@@ -26,7 +24,6 @@
   color: var(--text-dim);
   margin-bottom: 2rem;
   font-family: 'Rock Salt', cursive;
-  transform: rotate(0.8deg) translateX(20px);
 }
 
 .options {
@@ -47,14 +44,6 @@
   transform-origin: left center;
 }
 
-.option--1 { transform: rotate(-0.7deg) translateX(3px); }
-.option--2 { transform: rotate(0.5deg) translateX(-5px); }
-.option--3 { transform: rotate(-0.3deg) translateX(8px); }
-.option--4 { transform: rotate(0.6deg) translateX(-3px); }
-.option--5 { transform: rotate(-0.5deg) translateX(5px); }
-.option--6 { transform: rotate(0.4deg) translateX(-8px); }
-.option--7 { transform: rotate(-0.6deg) translateX(2px); }
-.option--8 { transform: rotate(0.3deg) translateX(-4px); }
 
 .option:hover {
   background: rgba(255, 255, 255, 0.05);
@@ -106,7 +95,6 @@
   color: var(--text-dim);
   font-family: 'Rock Salt', cursive;
   margin-top: 1rem;
-  transform: rotate(0.5deg);
   text-align: center;
 }
 
@@ -124,7 +112,6 @@
   font-size: 1.1rem;
   margin-top: 1rem;
   font-family: 'Rock Salt', cursive;
-  transform: rotate(-0.8deg);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -141,6 +128,42 @@
   margin-top: 2rem;
 }
 
+.submit-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.submitting-message {
+  font-size: 1rem;
+  color: var(--text-dim);
+  font-family: 'Rock Salt', cursive;
+  text-align: center;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.submit-error-message {
+  font-size: 1rem;
+  color: #ff6b6b;
+  font-family: 'Rock Salt', cursive;
+  text-align: center;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #ff6b6b;
+  border-radius: 8px;
+  background: rgba(255, 107, 107, 0.1);
+  max-width: 300px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
 .nav-btn {
   background: none;
   border: none;
@@ -150,7 +173,7 @@
   opacity: 0.8;
 }
 
-.nav-btn:hover {
+.nav-btn:hover:not(:disabled) {
   transform: scale(1.1);
   opacity: 1;
 }

@@ -6,6 +6,7 @@ import ThankYouPage from './components/ThankYouPage'
 import RoughFilters from './components/RoughFilters'
 import Doodles from './components/Doodles'
 import { questions } from './data/questions'
+import { submitToGoogleForms } from './services/googleFormsService'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('landing')
@@ -18,6 +19,8 @@ function App() {
     phone: ''
   })
   const [error, setError] = useState(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState(null)
 
   const startSurvey = () => {
     setCurrentPage('contact')
@@ -93,13 +96,26 @@ function App() {
     }
   }
 
-  const submitSurvey = () => {
+  const submitSurvey = async () => {
     if (!validateCurrentQuestion()) return
 
-    // Here you would typically send answers and contact info to a backend
-    console.log('Contact Info:', contactInfo)
-    console.log('Survey answers:', answers)
-    setCurrentPage('thankyou')
+    // Set loading state
+    setIsSubmitting(true)
+    setSubmitError(null)
+
+    try {
+      // Submit to Google Forms
+      await submitToGoogleForms(contactInfo, answers)
+
+      // Navigate to thank you page on success
+      setCurrentPage('thankyou')
+
+    } catch (error) {
+      console.error('Submission failed:', error)
+      setSubmitError('Failed to submit survey. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -133,6 +149,8 @@ function App() {
           totalQuestions={questions.length}
           answers={answers}
           error={error}
+          submitError={submitError}
+          isSubmitting={isSubmitting}
           onSelect={selectOption}
           onNext={nextQuestion}
           onPrev={prevQuestion}
