@@ -94,7 +94,8 @@ export const questions = [
   {
     id: 8,
     text: "How do you currently discover collaborators?",
-    type: "single",
+    type: "multiple",
+    hint: "select all that apply",
     options: [
       "Instagram",
       "TikTok",

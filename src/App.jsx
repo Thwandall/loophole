@@ -59,8 +59,14 @@ function App() {
         setError(q.id)
         return false
       }
+    } else if (q.type === 'single') {
+      // For single choice, check if answer exists (including 0)
+      if (answer === undefined || answer === null) {
+        setError(q.id)
+        return false
+      }
     } else if (!answer || (Array.isArray(answer) && answer.length === 0)) {
-      // For single/multiple choice
+      // For multiple choice
       setError(q.id)
       return false
     }
