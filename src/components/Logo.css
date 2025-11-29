@@ -1,0 +1,23 @@
+.logo {
+  color: var(--text);
+  animation: scribble 0.15s infinite;
+}
+
+.logo--small {
+  animation: none;
+}
+
+@keyframes scribble {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% { 
+    transform: translate(0.3px, -0.3px) rotate(0.2deg);
+  }
+  50% { 
+    transform: translate(-0.3px, 0.3px) rotate(-0.2deg);
+  }
+  75% { 
+    transform: translate(0.3px, 0.3px) rotate(0.1deg);
+  }
+}

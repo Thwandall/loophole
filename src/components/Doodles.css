@@ -1,0 +1,35 @@
+.doodle {
+  position: fixed;
+  stroke: rgba(245, 245, 240, 0.08);
+  stroke-width: 1.5;
+  fill: none;
+  pointer-events: none;
+  filter: url(#rough);
+}
+
+.doodle-1 {
+  top: 10%;
+  left: 5%;
+  width: 120px;
+  animation: drift 20s ease-in-out infinite;
+}
+
+.doodle-2 {
+  bottom: 15%;
+  right: 8%;
+  width: 100px;
+  animation: drift 25s ease-in-out infinite reverse;
+}
+
+.doodle-3 {
+  top: 60%;
+  left: 3%;
+  width: 80px;
+  animation: drift 18s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(10px, -10px) rotate(5deg); }
+  66% { transform: translate(-5px, 5px) rotate(-3deg); }
+}

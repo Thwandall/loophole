@@ -1,0 +1,24 @@
+.checkbox-box {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.checkbox-box svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--text);
+  stroke-width: 2;
+  fill: none;
+}
+
+.checkmark {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  stroke-width: 3;
+}
+
+.checkmark--selected {
+  opacity: 1;
+}

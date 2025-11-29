@@ -1,0 +1,76 @@
+.landing-content {
+  text-align: center;
+  max-width: 600px;
+  transform: rotate(-1.5deg);
+}
+
+.logo-container {
+  margin-bottom: 3rem;
+  transform: rotate(2.5deg);
+}
+
+.tagline {
+  font-family: 'Sedgwick Ave', cursive;
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  transform: rotate(0.8deg);
+}
+
+.tagline span {
+  display: block;
+  position: relative;
+}
+
+.tagline span:nth-child(1) {
+  transform: rotate(-0.5deg) translateX(-5px);
+}
+
+.tagline span:nth-child(2) {
+  transform: rotate(0.7deg) translateX(8px);
+}
+
+.cta-text {
+  font-size: 1.6rem;
+  color: var(--text-dim);
+  margin-bottom: 3rem;
+  font-family: 'Rock Salt', cursive;
+  transform: rotate(-1.2deg) translateX(15px);
+  line-height: 2;
+  letter-spacing: 0.5px;
+}
+
+.down-arrow {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.down-arrow:hover {
+  transform: scale(1.1);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+.down-arrow svg {
+  width: 70px;
+  height: 70px;
+  stroke: var(--text);
+  stroke-width: 2.5;
+  fill: none;
+  filter: url(#rough);
+}
+
+@media (max-width: 600px) {
+  .tagline {
+    font-size: 1.6rem;
+  }
+  .cta-text {
+    font-size: 1.2rem;
+  }
+}
