@@ -34,8 +34,10 @@ function App() {
 
   const selectOption = (questionId, type, value) => {
     setError(null)
-    
+
     if (type === 'single') {
+      setAnswers(prev => ({ ...prev, [questionId]: value }))
+    } else if (type === 'text') {
       setAnswers(prev => ({ ...prev, [questionId]: value }))
     } else {
       // Multiple selection
@@ -50,8 +52,15 @@ function App() {
   const validateCurrentQuestion = () => {
     const q = questions[currentQuestion]
     const answer = answers[q.id]
-    
-    if (!answer || (Array.isArray(answer) && answer.length === 0)) {
+
+    // For text questions, check if there's any content
+    if (q.type === 'text') {
+      if (!answer || !answer.trim()) {
+        setError(q.id)
+        return false
+      }
+    } else if (!answer || (Array.isArray(answer) && answer.length === 0)) {
+      // For single/multiple choice
       setError(q.id)
       return false
     }

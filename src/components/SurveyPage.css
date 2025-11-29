@@ -70,6 +70,55 @@
   letter-spacing: 0.5px;
 }
 
+.text-input-container {
+  margin-bottom: 2rem;
+}
+
+.text-input {
+  width: 100%;
+  font-size: 1.2rem;
+  font-family: 'Sedgwick Ave', cursive;
+  padding: 1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(245, 245, 240, 0.3);
+  border-radius: 4px;
+  color: var(--text);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  resize: vertical;
+  min-height: 150px;
+  line-height: 1.6;
+}
+
+.text-input::placeholder {
+  color: var(--text-dim);
+  opacity: 0.6;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.selection-counter {
+  font-size: 1rem;
+  color: var(--text-dim);
+  font-family: 'Rock Salt', cursive;
+  margin-top: 1rem;
+  transform: rotate(0.5deg);
+  text-align: center;
+}
+
+.option--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.option--disabled:hover {
+  background: transparent;
+}
+
 .error-msg {
   color: #e57373;
   font-size: 1.1rem;

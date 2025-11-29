@@ -1,132 +1,126 @@
 export const questions = [
   {
     id: 1,
-    text: "What type of creative work do you primarily do?",
-    type: "single",
+    text: "What is your primary creative field?",
+    type: "multiple",
+    hint: "select all that apply",
     options: [
-      "Visual Arts (painting, illustration, photography)",
-      "Music & Audio",
-      "Writing & Poetry",
-      "Film & Video",
-      "Design (graphic, UI/UX, fashion)",
-      "Performance Art",
-      "Mixed Media / Multiple disciplines",
-      "I'm not a creator, just interested"
-    ]
-  },
-  {
-    id: 2,
-    text: "How do you currently discover other artists to collaborate with?",
-    type: "single",
-    options: [
-      "Social media (Instagram, TikTok, etc.)",
-      "Through friends and personal networks",
-      "Local events and meetups",
-      "Online communities and forums",
-      "I don't really find collaborators easily",
+      "Visual Arts",
+      "Music / Audio Production",
+      "Design",
+      "Film / Photography",
+      "Writing",
+      "Tech / Digital Art",
+      "Fashion",
       "Other"
     ]
   },
   {
-    id: 3,
-    text: "What are the biggest challenges you face as a creative?",
-    type: "multiple",
-    hint: "select all that apply",
+    id: 2,
+    text: "What level best describes your experience?",
+    type: "single",
     options: [
-      "Finding collaborators who match my vibe",
-      "Getting my work seen by the right people",
-      "Monetizing my creative work",
-      "Staying motivated and inspired",
-      "Managing the business side of things",
-      "Building a consistent audience",
-      "Balancing creative work with a day job"
+      "Beginner",
+      "Intermediate",
+      "Advanced",
+      "Professional"
+    ]
+  },
+  {
+    id: 3,
+    text: "How often do you collaborate with other creatives?",
+    type: "single",
+    options: [
+      "Weekly",
+      "Monthly",
+      "A few times a year",
+      "Rarely / Never"
     ]
   },
   {
     id: 4,
-    text: "How often do you collaborate with other artists?",
-    type: "single",
+    text: "What stops you from collaborating more often?",
+    type: "multiple",
+    hint: "select up to 3",
+    maxSelections: 3,
     options: [
-      "Weekly - I'm always working with someone",
-      "Monthly - fairly regularly",
-      "A few times a year",
-      "Rarely - I mostly work solo",
-      "Never, but I want to start"
+      "Hard to find reliable partners",
+      "Hard to find people with the right skillset",
+      "Communication issues",
+      "Scheduling conflicts",
+      "Mismatched expectations",
+      "Trust issues",
+      "Lack of a platform",
+      "Other"
     ]
   },
   {
     id: 5,
-    text: "What would make you join a new creative platform?",
-    type: "multiple",
-    hint: "select all that apply",
-    options: [
-      "Easy way to find like-minded creators",
-      "Portfolio showcase features",
-      "Collaboration tools and project spaces",
-      "Opportunities to get paid for my work",
-      "Community events and challenges",
-      "Learning resources and workshops"
-    ]
+    text: "What types of collaborators are you usually looking for?",
+    type: "text",
+    placeholder: "Tell us about the types of collaborators you seek..."
   },
   {
     id: 6,
-    text: "How important is community to your creative practice?",
+    text: "What is the most important factor when choosing someone to collaborate with?",
     type: "single",
+    hint: "choose 1",
     options: [
-      "Essential - I thrive on connection",
-      "Very important - I need feedback and support",
-      "Somewhat important - nice to have",
-      "Not very important - I prefer working alone"
+      "Skill level",
+      "Portfolio quality",
+      "Personality / communication",
+      "Professionalism / reliability",
+      "Shared creative goals",
+      "Speed of work",
+      "Availability"
     ]
   },
   {
     id: 7,
-    text: "What's your preferred way to share your work?",
-    type: "single",
+    text: "Which features would you value the most in a collaboration platform?",
+    type: "multiple",
+    hint: "select all that apply",
     options: [
-      "Instagram / visual platforms",
-      "TikTok / short-form video",
-      "Personal website / portfolio",
-      "Behance / Dribbble / specialized platforms",
-      "I mostly keep my work private",
-      "Physical exhibitions / live shows"
+      "Profile + portfolio matching",
+      "Skill-based filtering",
+      "Project posting board",
+      "Messaging + voice notes",
+      "Collaboration workspace",
+      "Reputation / reliability scores",
+      "Contracts / clear deliverables",
+      "Other"
     ]
   },
   {
     id: 8,
-    text: "Which features would you use most on a creative platform?",
-    type: "multiple",
-    hint: "select all that apply",
+    text: "How do you currently discover collaborators?",
+    type: "single",
     options: [
-      "Artist discovery and matching",
-      "Direct messaging with creators",
-      "Project collaboration spaces",
-      "Portfolio hosting",
-      "Event listings and meetups",
-      "Marketplace for selling work"
+      "Instagram",
+      "TikTok",
+      "Twitter",
+      "Discord",
+      "Friends / word of mouth",
+      "I don't — I rarely collaborate",
+      "Other"
     ]
   },
   {
     id: 9,
-    text: "How would you describe your creative career stage?",
-    type: "single",
-    options: [
-      "Just starting out / student",
-      "Emerging - building my practice",
-      "Established - consistent body of work",
-      "Professional - this is my main income",
-      "Hobbyist - I create for fun"
-    ]
+    text: "What is your biggest frustration when collaborating?",
+    type: "text",
+    placeholder: "Share your biggest frustration with collaboration..."
   },
   {
     id: 10,
-    text: "Would you be interested in early access to loophole?",
+    text: "If Loophole solved your collaboration problems, how likely are you to use it?",
     type: "single",
     options: [
-      "Yes, sign me up!",
-      "Maybe, I'd like to learn more first",
-      "Not right now, but keep me updated",
-      "No thanks"
+      "Very likely",
+      "Likely",
+      "Neutral",
+      "Unlikely",
+      "Very unlikely"
     ]
   }
 ]
