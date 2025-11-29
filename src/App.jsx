@@ -56,6 +56,10 @@ function App() {
     if (currentQuestion > 0) {
       setCurrentQuestion(prev => prev - 1)
       setError(null)
+    } else {
+      // If on first question, go back to landing page
+      setCurrentPage('landing')
+      setError(null)
     }
   }
 

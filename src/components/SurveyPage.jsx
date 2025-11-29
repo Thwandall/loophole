@@ -65,10 +65,9 @@ function SurveyPage({
         </div>
         
         <div className="nav-arrows">
-          <button 
-            className="nav-btn" 
-            onClick={onPrev} 
-            disabled={isFirst}
+          <button
+            className="nav-btn"
+            onClick={onPrev}
           >
             <NavArrow direction="left" />
           </button>

@@ -42,28 +42,30 @@
   letter-spacing: 0.5px;
 }
 
-.down-arrow {
+.survey-start-btn {
+  font-family: 'Rock Salt', cursive;
+  font-size: 1.4rem;
+  color: var(--text);
+  background: transparent;
+  border: 2.5px solid var(--text);
+  padding: 1rem 2.5rem;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  filter: url(#rough);
+  transform: rotate(-1deg);
+  letter-spacing: 0.5px;
   animation: bounce 2s ease-in-out infinite;
 }
 
-.down-arrow:hover {
-  transform: scale(1.1);
+.survey-start-btn:hover {
+  transform: rotate(-1deg) scale(1.05);
+  background: var(--text);
+  color: var(--bg);
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
-}
-
-.down-arrow svg {
-  width: 70px;
-  height: 70px;
-  stroke: var(--text);
-  stroke-width: 2.5;
-  fill: none;
-  filter: url(#rough);
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(10px) rotate(-1deg); }
 }
 
 @media (max-width: 600px) {

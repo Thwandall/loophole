@@ -11,18 +11,16 @@ function LandingPage({ onStart }) {
         </div>
         
         <p className="tagline scribble-text">
-          <span>loophole is a platform where</span>
-          <span>artists come to connect and create.</span>
+          <span>Loophole's mission is to make creative networking feel like play, not pressure — by giving every creator a fair shot at finding their people. This is a platform for creators who are done with closed doors. Welcome to the side door, the loophole!</span>
         </p>
         
         <p className="cta-text">
-          help us help you...<br />
-          get in the loop
+          Get in the loop<br />
         </p>
         
-        <div className="down-arrow" onClick={onStart}>
-          <DownArrow />
-        </div>
+        <button className="survey-start-btn" onClick={onStart}>
+          Click to take Survey
+        </button>
       </div>
     </div>
   )
