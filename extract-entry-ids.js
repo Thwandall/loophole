@@ -5,6 +5,7 @@
 
 const formViewUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSe_Ixp_5SAopgq2SNrjGx72v5BJ8fCwtK0D4C9VwKktvBnEDQ/viewform'
 
+
 async function extractEntryIds() {
   console.log('Fetching form source...\n')
 
