@@ -141,7 +141,10 @@ const server = http.createServer(async (req, res) => {
   // CORS configuration
   const allowedOrigins = [
     process.env.FRONTEND_URL,
-    'https://loophole-co.com'
+    'https://loophole-co.com',
+    'http://localhost:5173',
+    'loophole-git-main-loopholes-projects-0e5b41f1.vercel.app',
+    'https://loophole-gamma.vercel.app'
   ].filter(Boolean)
 
   const origin = allowedOrigins[0] || '*'
