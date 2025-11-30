@@ -143,12 +143,18 @@ const server = http.createServer(async (req, res) => {
     process.env.FRONTEND_URL,
     'https://loophole-co.com',
     'http://localhost:5173',
-    'loophole-git-main-loopholes-projects-0e5b41f1.vercel.app',
-    'https://loophole-gamma.vercel.app'
+    'https://loophole.onrender.com',
   ].filter(Boolean)
 
-  const origin = allowedOrigins[0] || '*'
-  res.setHeader('Access-Control-Allow-Origin', origin)
+  const requestOrigin = req.headers.origin
+
+  // Only echo back origins we explicitly allow
+  if (requestOrigin && allowedOrigins.includes(requestOrigin)) {
+    res.setHeader('Access-Control-Allow-Origin', requestOrigin)
+  }
+
+  // Ensure caches vary on Origin
+  res.setHeader('Vary', 'Origin')
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
 
