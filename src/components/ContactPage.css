@@ -28,11 +28,6 @@
   transform-origin: left center;
 }
 
-.form-group:nth-child(1) { transform: rotate(-0.5deg) translateX(3px); }
-.form-group:nth-child(2) { transform: rotate(0.4deg) translateX(-5px); }
-.form-group:nth-child(3) { transform: rotate(-0.3deg) translateX(8px); }
-.form-group:nth-child(4) { transform: rotate(0.5deg) translateX(-3px); }
-
 .form-label {
   font-size: 1.3rem;
   font-family: 'Sedgwick Ave', cursive;
