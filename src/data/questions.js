@@ -11,8 +11,7 @@ export const questions = [
       "Film / Photography",
       "Writing",
       "Tech / Digital Art",
-      "Fashion",
-      "Other"
+      "Fashion"
     ]
   },
   {
@@ -50,8 +49,7 @@ export const questions = [
       "Scheduling conflicts",
       "Mismatched expectations",
       "Trust issues",
-      "Lack of a platform",
-      "Other"
+      "Lack of a platform"
     ]
   },
   {
@@ -87,8 +85,7 @@ export const questions = [
       "Messaging + voice notes",
       "Collaboration workspace",
       "Reputation / reliability scores",
-      "Contracts / clear deliverables",
-      "Other"
+      "Contracts / clear deliverables"
     ]
   },
   {
@@ -102,8 +99,7 @@ export const questions = [
       "Twitter",
       "Discord",
       "Friends / word of mouth",
-      "I don't — I rarely collaborate",
-      "Other"
+      "I don\u2019t \u2014 I rarely collaborate"
     ]
   },
   {
@@ -126,12 +122,12 @@ export const questions = [
   },
   {
     id: 11,
-    text: "Would you be open to a short 10–15 minute interview to help us build a platform that truly supports creatives like you? Your insight would directly shape the features we build.",
+    text: "Would you be open to a short 10-15 minute interview to help us build a platform that truly supports creatives like you? Your insight would directly shape the features we build.",
     type: "single",
     options: [
       "Yes, definitely",
       "Yes, but I'd need to schedule",
-      "Maybe — send details",
+      "Maybe - send details",
       "No, not right now"
     ]
   }

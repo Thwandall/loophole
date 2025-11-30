@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import LandingPage from './components/LandingPage'
 import ContactPage from './components/ContactPage'
 import SurveyPage from './components/SurveyPage'
@@ -22,6 +22,12 @@ function App() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState(null)
 
+  useEffect(() => {
+    console.log('%c🎨 LOOPHOLE SURVEY DEBUG MODE 🎨', 'font-size: 20px; font-weight: bold; color: #4CAF50;')
+    console.log('%cAll interactions will be logged below', 'font-size: 14px; color: #888;')
+    console.log(`Total questions: ${questions.length}`)
+  }, [])
+
   const startSurvey = () => {
     setCurrentPage('contact')
   }
@@ -39,16 +45,22 @@ function App() {
     setError(null)
 
     if (type === 'single') {
-      setAnswers(prev => ({ ...prev, [questionId]: value }))
+      const newAnswers = { ...answers, [questionId]: value }
+      setAnswers(newAnswers)
+      console.log(`[Q${questionId}] Selected:`, value, '| All answers:', newAnswers)
     } else if (type === 'text') {
-      setAnswers(prev => ({ ...prev, [questionId]: value }))
+      const newAnswers = { ...answers, [questionId]: value }
+      setAnswers(newAnswers)
+      console.log(`[Q${questionId}] Text entered:`, value.substring(0, 50) + '...', '| All answers:', newAnswers)
     } else {
       // Multiple selection
       const current = answers[questionId] || []
       const newSelection = current.includes(value)
         ? current.filter(v => v !== value)
         : [...current, value]
-      setAnswers(prev => ({ ...prev, [questionId]: newSelection }))
+      const newAnswers = { ...answers, [questionId]: newSelection }
+      setAnswers(newAnswers)
+      console.log(`[Q${questionId}] Multiple choice updated:`, newSelection, '| All answers:', newAnswers)
     }
   }
 
@@ -77,11 +89,16 @@ function App() {
   }
 
   const nextQuestion = () => {
-    if (!validateCurrentQuestion()) return
-    
+    console.log(`[Navigation] Attempting to go from Q${currentQuestion + 1} to Q${currentQuestion + 2}`)
+    if (!validateCurrentQuestion()) {
+      console.log('[Navigation] Validation failed, staying on current question')
+      return
+    }
+
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(prev => prev + 1)
       setError(null)
+      console.log(`[Navigation] Moved to Q${currentQuestion + 2}`)
     }
   }
 
@@ -97,7 +114,16 @@ function App() {
   }
 
   const submitSurvey = async () => {
-    if (!validateCurrentQuestion()) return
+    console.log('='.repeat(60))
+    console.log('[SUBMIT] Submit button clicked!')
+    console.log('[SUBMIT] Final answers:', answers)
+    console.log('[SUBMIT] Contact info:', contactInfo)
+    console.log('='.repeat(60))
+
+    if (!validateCurrentQuestion()) {
+      console.log('[SUBMIT] Validation failed, cannot submit')
+      return
+    }
 
     // Set loading state
     setIsSubmitting(true)
@@ -105,13 +131,15 @@ function App() {
 
     try {
       // Submit to Google Forms
+      console.log('[SUBMIT] Calling submitToGoogleForms...')
       await submitToGoogleForms(contactInfo, answers)
 
+      console.log('[SUBMIT] ✓ Submission successful! Moving to thank you page...')
       // Navigate to thank you page on success
       setCurrentPage('thankyou')
 
     } catch (error) {
-      console.error('Submission failed:', error)
+      console.error('[SUBMIT] ✗ Submission failed:', error)
       setSubmitError('Failed to submit survey. Please try again.')
     } finally {
       setIsSubmitting(false)
