@@ -139,22 +139,10 @@ function buildGoogleFormsParams(body) {
  */
 const server = http.createServer(async (req, res) => {
   // CORS configuration
-  const allowedOrigins = [
-    process.env.FRONTEND_URL,
-    'https://loophole-co.com',
-    'http://localhost:5173',
-    'https://loophole.onrender.com',
-  ].filter(Boolean)
-
-  const requestOrigin = req.headers.origin
-
-  // Only echo back origins we explicitly allow
-  if (requestOrigin && allowedOrigins.includes(requestOrigin)) {
-    res.setHeader('Access-Control-Allow-Origin', requestOrigin)
-  }
-
-  // Ensure caches vary on Origin
-  res.setHeader('Vary', 'Origin')
+  // For this survey backend we can safely allow all origins,
+  // since it only accepts non-sensitive survey data and forwards
+  // it to Google Forms.
+  res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
 
