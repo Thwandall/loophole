@@ -202,7 +202,8 @@ export async function submitToGoogleForms(contactInfo, answers) {
       )
     }
 
-    const backendResponse = await fetch('/api/submit-survey', {
+    const apiUrl = import.meta.env.VITE_API_URL || '/api'
+    const backendResponse = await fetch(`${apiUrl}/api/submit-survey`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -1,0 +1,22 @@
+# Test and development files
+test-*.js
+extract-entry-ids.js
+detailed-form-check.js
+find-bad-field.js
+check-*.js
+compare-strings.js
+verify-fix.js
+form-data.json
+latest-form-data.txt
+get-fresh-entry-ids.js
+
+# Documentation
+GOOGLE_FORMS_SETUP.md
+
+# Backend (deployed separately)
+backend/
+server.js
+
+# Environment files (use Vercel dashboard for env vars)
+.env
+.env.local
