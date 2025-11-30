@@ -99,7 +99,7 @@ export const questions = [
       "Twitter",
       "Discord",
       "Friends / word of mouth",
-      "I don\u2019t \u2014 I rarely collaborate"
+      "I don't - I rarely collaborate"
     ]
   },
   {
@@ -126,7 +126,7 @@ export const questions = [
     type: "single",
     options: [
       "Yes, definitely",
-      "Yes, but I'd need to schedule",
+      "Yes, but I would need to schedule",
       "Maybe - send details",
       "No, not right now"
     ]
