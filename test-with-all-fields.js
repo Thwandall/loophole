@@ -16,13 +16,15 @@ const GOOGLE_FORM_CONFIG = {
     question2: 'entry.821105014',
     question3: 'entry.527061810',
     question4: 'entry.1210677777',
-    question5: 'entry.1942153459',
-    question6: 'entry.697938755',
-    question7: 'entry.1010737986',
-    question8: 'entry.1995184064',
-    question9: 'entry.820450860',
-    question10: 'entry.470721705',
-    question11: 'entry.1132590371'
+    // IMPORTANT: Q5 was deleted from the Google Form. We renumbered Q6..Q11 → Q5..Q10.
+    question5: 'entry.697938755',
+    question6: 'entry.1010737986',
+    question7: 'entry.1995184064',
+    question8: 'entry.820450860',
+    question9: 'entry.470721705',
+    question10: 'entry.1132590371',
+    // New final question
+    question11: 'entry.1942153459'
   }
 }
 
@@ -49,25 +51,25 @@ async function testFullSubmission() {
   // Question 4: Multiple choice (checkboxes)
   params.append(GOOGLE_FORM_CONFIG.fields.question4, questions[3].options[0]) // First option
 
-  // Question 5: Text
-  params.append(GOOGLE_FORM_CONFIG.fields.question5, 'Test collaborator description')
+  // Question 5 (new): Single choice
+  params.append(GOOGLE_FORM_CONFIG.fields.question5, questions[4].options[0])
 
-  // Question 6: Single choice
+  // Question 6 (new): Multiple choice (checkboxes)
   params.append(GOOGLE_FORM_CONFIG.fields.question6, questions[5].options[0])
 
-  // Question 7: Multiple choice (checkboxes)
+  // Question 7 (new): Multiple choice (checkboxes)
   params.append(GOOGLE_FORM_CONFIG.fields.question7, questions[6].options[0])
 
-  // Question 8: Multiple choice (checkboxes)
-  params.append(GOOGLE_FORM_CONFIG.fields.question8, questions[7].options[0])
+  // Question 8 (new): Text
+  params.append(GOOGLE_FORM_CONFIG.fields.question8, 'Test frustration text')
 
-  // Question 9: Text
-  params.append(GOOGLE_FORM_CONFIG.fields.question9, 'Test frustration text')
+  // Question 9 (new): Single choice
+  params.append(GOOGLE_FORM_CONFIG.fields.question9, questions[8].options[0])
 
-  // Question 10: Single choice
+  // Question 10 (new): Single choice (last question)
   params.append(GOOGLE_FORM_CONFIG.fields.question10, questions[9].options[0])
 
-  // Question 11: Single choice
+  // Question 11 (new): Single choice (new final yes/no)
   params.append(GOOGLE_FORM_CONFIG.fields.question11, questions[10].options[0])
 
   console.log('Payload preview:')

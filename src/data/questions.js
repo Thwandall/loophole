@@ -53,13 +53,8 @@ export const questions = [
     ]
   },
   {
+    // NOTE: Q5 was deleted from the Google Form; we renumber subsequent questions.
     id: 5,
-    text: "What types of collaborators are you usually looking for?",
-    type: "text",
-    placeholder: "Tell us about the types of collaborators you seek..."
-  },
-  {
-    id: 6,
     text: "What is the most important factor when choosing someone to collaborate with?",
     type: "single",
     hint: "choose 1",
@@ -74,7 +69,7 @@ export const questions = [
     ]
   },
   {
-    id: 7,
+    id: 6,
     text: "Which features would you value the most in a collaboration platform?",
     type: "multiple",
     hint: "select all that apply",
@@ -89,7 +84,7 @@ export const questions = [
     ]
   },
   {
-    id: 8,
+    id: 7,
     text: "How do you currently discover collaborators?",
     type: "multiple",
     hint: "select all that apply",
@@ -103,13 +98,13 @@ export const questions = [
     ]
   },
   {
-    id: 9,
+    id: 8,
     text: "What is your biggest frustration when collaborating?",
     type: "text",
     placeholder: "Share your biggest frustration with collaboration..."
   },
   {
-    id: 10,
+    id: 9,
     text: "If Loophole solved your collaboration problems, how likely are you to use it?",
     type: "single",
     options: [
@@ -121,14 +116,22 @@ export const questions = [
     ]
   },
   {
-    id: 11,
+    id: 10,
     text: "Would you be open to a short 10-15 minute interview to help us build a platform that truly supports creatives like you? Your insight would directly shape the features we build.",
     type: "single",
     options: [
       "Yes, definitely",
-      "Yes, but I would need to schedule",
-      "Maybe - send details",
+      "Maybe — send details",
       "No, not right now"
+    ]
+  },
+  {
+    id: 11,
+    text: "Would you want to be spotlighted on this platform?",
+    type: "single",
+    options: [
+      "Yes",
+      "No"
     ]
   }
 ]

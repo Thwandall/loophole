@@ -28,13 +28,15 @@ const GOOGLE_FORM_CONFIG = {
     question2: 'entry.821105014',       // Q2: Experience level (single choice)
     question3: 'entry.527061810',       // Q3: Collaboration frequency (single choice)
     question4: 'entry.1210677777',      // Q4: Collaboration barriers (checkboxes)
-    question5: 'entry.1942153459',      // Q5: Types of collaborators (text)
-    question6: 'entry.697938755',       // Q6: Important factor (single choice)
-    question7: 'entry.1010737986',      // Q7: Platform features (checkboxes)
-    question8: 'entry.1995184064',      // Q8: Discovery methods (checkboxes)
-    question9: 'entry.820450860',       // Q9: Biggest frustration (text)
-    question10: 'entry.470721705',      // Q10: Likelihood to use (single choice)
-    question11: 'entry.1132590371'      // Q11: Open to interview (single choice)
+    // IMPORTANT: Q5 was deleted from the Google Form. We renumbered Q6..Q11 → Q5..Q10.
+    question5: 'entry.697938755',       // new Q5 (old Q6): Important factor (single choice)
+    question6: 'entry.1010737986',      // new Q6 (old Q7): Platform features (checkboxes)
+    question7: 'entry.1995184064',      // new Q7 (old Q8): Discovery methods (checkboxes)
+    question8: 'entry.820450860',       // new Q8 (old Q9): Biggest frustration (text)
+    question9: 'entry.470721705',       // new Q9 (old Q10): Likelihood to use (single choice)
+    question10: 'entry.1132590371',     // new Q10 (old Q11): Open to interview (single choice)
+    // New final question added in the Google Form (yes/no)
+    question11: 'entry.1942153459'      // Q11: Spotlighted on platform? (single choice)
   },
 
   // NOTE: No hidden fields or sentinel fields are needed for this form!
@@ -108,7 +110,7 @@ function validateGoogleFormConfig() {
 
 /**
  * Converts option indices to human-readable labels for Google Forms
- * @param {number} questionId - The question ID (1-10)
+ * @param {number} questionId - The question ID (1-11)
  * @param {number|number[]|string} value - The option index, array of indices, or text
  * @returns {string} - Human-readable label(s) for Google Forms
  */
@@ -259,7 +261,7 @@ export async function submitToGoogleFormsAlt(contactInfo, answers) {
       params.append(GOOGLE_FORM_CONFIG.fields.phone, contactInfo.phone)
     }
 
-    // Add survey answers
+    // Add survey answers (11 questions total; Q5 is deleted and renumbered, plus a new final question)
     for (let i = 1; i <= 11; i++) {
       const fieldKey = `question${i}`
       const entryId = GOOGLE_FORM_CONFIG.fields[fieldKey]

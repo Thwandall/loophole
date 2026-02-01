@@ -15,13 +15,15 @@ const GOOGLE_FORM_CONFIG = {
     question2: 'entry.821105014',
     question3: 'entry.527061810',
     question4: 'entry.1210677777',
-    question5: 'entry.1942153459',
-    question6: 'entry.697938755',
-    question7: 'entry.1010737986',
-    question8: 'entry.1995184064',
-    question9: 'entry.820450860',
-    question10: 'entry.470721705',
-    question11: 'entry.1132590371'
+    // IMPORTANT: Q5 was deleted from the Google Form. We renumbered Q6..Q11 → Q5..Q10.
+    question5: 'entry.697938755',
+    question6: 'entry.1010737986',
+    question7: 'entry.1995184064',
+    question8: 'entry.820450860',
+    question9: 'entry.470721705',
+    question10: 'entry.1132590371',
+    // New final question
+    question11: 'entry.1942153459'
   }
 }
 
@@ -41,13 +43,13 @@ async function testWithHiddenFields() {
   params.append(GOOGLE_FORM_CONFIG.fields.question2, questions[1].options[2])
   params.append(GOOGLE_FORM_CONFIG.fields.question3, questions[2].options[0])
   params.append(GOOGLE_FORM_CONFIG.fields.question4, questions[3].options[1])
-  params.append(GOOGLE_FORM_CONFIG.fields.question5, 'Looking for designers')
-  params.append(GOOGLE_FORM_CONFIG.fields.question6, questions[5].options[2])
+  params.append(GOOGLE_FORM_CONFIG.fields.question5, questions[4].options[2])
+  params.append(GOOGLE_FORM_CONFIG.fields.question6, questions[5].options[1])
   params.append(GOOGLE_FORM_CONFIG.fields.question7, questions[6].options[1])
-  params.append(GOOGLE_FORM_CONFIG.fields.question8, questions[7].options[1])
-  params.append(GOOGLE_FORM_CONFIG.fields.question9, 'Communication is hard')
+  params.append(GOOGLE_FORM_CONFIG.fields.question8, 'Communication is hard')
+  params.append(GOOGLE_FORM_CONFIG.fields.question9, questions[8].options[1])
   params.append(GOOGLE_FORM_CONFIG.fields.question10, questions[9].options[1])
-  params.append(GOOGLE_FORM_CONFIG.fields.question11, questions[10].options[1])
+  params.append(GOOGLE_FORM_CONFIG.fields.question11, questions[10].options[0])
 
   // NOW ADD THE HIDDEN FIELDS from your production code
   const nowTs = Date.now().toString()
@@ -115,11 +117,11 @@ async function testWithU0Url() {
   params.append(GOOGLE_FORM_CONFIG.fields.question2, questions[1].options[0])
   params.append(GOOGLE_FORM_CONFIG.fields.question3, questions[2].options[0])
   params.append(GOOGLE_FORM_CONFIG.fields.question4, questions[3].options[0])
-  params.append(GOOGLE_FORM_CONFIG.fields.question5, 'test')
+  params.append(GOOGLE_FORM_CONFIG.fields.question5, questions[4].options[0])
   params.append(GOOGLE_FORM_CONFIG.fields.question6, questions[5].options[0])
   params.append(GOOGLE_FORM_CONFIG.fields.question7, questions[6].options[0])
-  params.append(GOOGLE_FORM_CONFIG.fields.question8, questions[7].options[0])
-  params.append(GOOGLE_FORM_CONFIG.fields.question9, 'test')
+  params.append(GOOGLE_FORM_CONFIG.fields.question8, 'test')
+  params.append(GOOGLE_FORM_CONFIG.fields.question9, questions[8].options[0])
   params.append(GOOGLE_FORM_CONFIG.fields.question10, questions[9].options[0])
   params.append(GOOGLE_FORM_CONFIG.fields.question11, questions[10].options[0])
 

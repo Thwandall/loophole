@@ -21,13 +21,13 @@ async function testWithoutHidden() {
   params.append('entry.821105014', 'Professional')
   params.append('entry.527061810', 'Rarely / Never')
   params.append('entry.1210677777', 'Other')
-  params.append('entry.1942153459', 'bj')
   params.append('entry.697938755', 'Personality / communication')
   params.append('entry.1010737986', 'Contracts / clear deliverables')
-  params.append('entry.1995184064', "I don't — I rarely collaborate")
+  params.append('entry.1995184064', "I don't - I rarely collaborate")
   params.append('entry.820450860', 'jbhj')
   params.append('entry.470721705', 'Unlikely')
   params.append('entry.1132590371', 'No, not right now')
+  params.append('entry.1942153459', 'Yes')
 
   // NO hidden fields
   // NO sentinel fields

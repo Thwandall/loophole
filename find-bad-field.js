@@ -16,13 +16,13 @@ const workingFields = {
   'entry.821105014': 'Intermediate',
   'entry.527061810': 'Monthly',
   'entry.1210677777': 'Hard to find reliable partners',
-  'entry.1942153459': 'Test collaborator description',
   'entry.697938755': 'Skill level',
   'entry.1010737986': 'Profile + portfolio matching',
   'entry.1995184064': 'Instagram',
   'entry.820450860': 'Test frustration text',
   'entry.470721705': 'Very likely',
-  'entry.1132590371': 'Yes, definitely'
+  'entry.1132590371': 'Yes, definitely',
+  'entry.1942153459': 'Yes'
 }
 
 // The failing hidden/sentinel fields from production

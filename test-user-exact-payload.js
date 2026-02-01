@@ -19,14 +19,14 @@ async function testUserPayload() {
   params.append('entry.527061810', 'Rarely / Never')
   params.append('entry.1210677777', 'Mismatched expectations')
   params.append('entry.1210677777', 'Trust issues')
-  params.append('entry.1942153459', 'kn')
   params.append('entry.697938755', 'Shared creative goals')
   params.append('entry.1010737986', 'Contracts / clear deliverables')
   params.append('entry.1010737986', 'Reputation / reliability scores')
-  params.append('entry.1995184064', "I don't — I rarely collaborate")
+  params.append('entry.1995184064', "I don't - I rarely collaborate")
   params.append('entry.820450860', 'in')
   params.append('entry.470721705', 'Unlikely')
   params.append('entry.1132590371', 'No, not right now')
+  params.append('entry.1942153459', 'Yes')
 
   console.log('Payload:')
   for (let [key, value] of params.entries()) {
@@ -61,14 +61,14 @@ async function testUserPayload() {
     params2.append('entry.527061810', 'Rarely / Never')
     params2.append('entry.1210677777', 'Mismatched expectations')
     params2.append('entry.1210677777', 'Trust issues')
-    params2.append('entry.1942153459', 'kn')
     params2.append('entry.697938755', 'Shared creative goals')
     params2.append('entry.1010737986', 'Contracts / clear deliverables')
     params2.append('entry.1010737986', 'Reputation / reliability scores')
-    params2.append('entry.1995184064', "I don't — I rarely collaborate")  // Using straight quote
+    params2.append('entry.1995184064', "I don't - I rarely collaborate")  // Match the form exactly (straight apostrophe + hyphen)
     params2.append('entry.820450860', 'in')
     params2.append('entry.470721705', 'Unlikely')
     params2.append('entry.1132590371', 'No, not right now')
+    params2.append('entry.1942153459', 'Yes')
 
     const response2 = await fetch(FORM_URL, {
       method: 'POST',

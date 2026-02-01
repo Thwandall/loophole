@@ -28,13 +28,15 @@ const GOOGLE_FORM_CONFIG = {
     question2: 'entry.821105014',
     question3: 'entry.527061810',
     question4: 'entry.1210677777',
-    question5: 'entry.1942153459',
-    question6: 'entry.697938755',
-    question7: 'entry.1010737986',
-    question8: 'entry.1995184064',
-    question9: 'entry.820450860',
-    question10: 'entry.470721705',
-    question11: 'entry.1132590371'
+    // IMPORTANT: Q5 was deleted from the Google Form. We renumbered Q6..Q11 → Q5..Q10.
+    question5: 'entry.697938755',   // new Q5 (old Q6)
+    question6: 'entry.1010737986',  // new Q6 (old Q7)
+    question7: 'entry.1995184064',  // new Q7 (old Q8)
+    question8: 'entry.820450860',   // new Q8 (old Q9)
+    question9: 'entry.470721705',   // new Q9 (old Q10)
+    question10: 'entry.1132590371', // new Q10 (old Q11)
+    // New final question added in the Google Form (yes/no)
+    question11: 'entry.1942153459'  // Q11: Spotlighted on platform? (single choice)
   }
 }
 
